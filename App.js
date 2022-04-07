@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
-
+import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
 import TopBar from './components/TopBar';
-import FeedScrollView from './components/FeedScrollView';
+
+import HomeScreen from './screens/HomeScreen';
 
 export default function App() {
   const [loading, setLoading] = React.useState(true);
@@ -12,7 +12,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 250);
+    }, 750);
 
   }, [])
 
@@ -33,7 +33,7 @@ export default function App() {
         />
         <TopBar />
 
-        <FeedScrollView />
+        <HomeScreen />
 
       </SafeAreaView>
     );

@@ -17,20 +17,20 @@ export default function Card(props) {
                         uri: imagePath,
                     }}
                 />
-            </View>
-            }
+            </View>}
 
             <View style={styles.postDetailContainer}>
                 <View style={styles.postDetailTop}>
+
                     <View>
                         <Avatar />
                     </View>
 
                     <View style={styles.postDetailInfo}>
                         <Text style={styles.postAuthor}>{author}</Text>
-
                         <Text style={styles.postDate}>{date} (1 day ago)</Text>
                     </View>
+
                 </View>
 
                 <View>
@@ -46,6 +46,7 @@ export default function Card(props) {
 
                 <View style={styles.postFooterContainer}>
                     <View style={styles.postFooterLeftContainer}>
+
                         <View style={styles.postFavContainer}>
                             <Feather name="heart" size={24} color="white" />
                             <Text style={styles.favCount}>{likes}</Text>
@@ -55,7 +56,9 @@ export default function Card(props) {
                             <FontAwesome5 name="comment" size={24} color="white" />
                             <Text style={styles.commentCount}>{comments}</Text>
                         </View>
+
                     </View>
+
                     <View style={styles.postFooterRightContainer}>
                         <View><Text style={styles.timeOfRead}>{readTime} min read</Text></View>
                         <View style={styles.timeOfReadBtn}><Text style={styles.saveButton}>Save</Text></View>

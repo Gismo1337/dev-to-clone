@@ -37,6 +37,10 @@ export default function FeedScrollView() {
             <FeedFilter />
             <Card data={cardDataOne} />
             <Card data={cardDataTwo} />
+            <Card data={cardDataOne} />
+            <Card data={cardDataTwo} />
+            <Card data={cardDataOne} />
+            <Card data={cardDataTwo} />
         </ScrollView>
 
     );
