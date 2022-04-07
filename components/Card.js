@@ -4,9 +4,9 @@ import { Feather, FontAwesome5 } from '@expo/vector-icons';
 import Avatar from './Avatar';
 
 export default function Card(props) {
-    console.log(props.data)
-    const data = props.data
-    const imagePath = props.imagePath
+
+    // HARDCODED TAGS NEED TO BE ARRAY TO ITERATE THROUGH
+    const { imagePath, author, date, title, tag1, tag2, tag3, likes, comments, readTime } = props.data;
 
     return (
         <View style={styles.container}>
@@ -14,12 +14,11 @@ export default function Card(props) {
                 <Image
                     style={styles.cardImage}
                     source={{
-                        uri: 'https://images.unsplash.com/photo-1649325401644-41cd4627fa45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+                        uri: imagePath,
                     }}
                 />
             </View>
             }
-
 
             <View style={styles.postDetailContainer}>
                 <View style={styles.postDetailTop}>
@@ -27,50 +26,46 @@ export default function Card(props) {
                         <Avatar />
                     </View>
 
-
                     <View style={styles.postDetailInfo}>
-                        <Text style={styles.postAuthor}>Gismo1337</Text>
+                        <Text style={styles.postAuthor}>{author}</Text>
 
-                        <Text style={styles.postDate}>Apr 6 (1 day ago)</Text>
+                        <Text style={styles.postDate}>{date} (1 day ago)</Text>
                     </View>
                 </View>
 
-
-
                 <View>
-                    <Text style={styles.postTitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, quos.</Text>
+                    <Text style={styles.postTitle}>{title}</Text>
                 </View>
 
                 <View style={styles.postTagsContainer}>
-                    <Text style={styles.postTag}>#JavaScript</Text>
-                    <Text style={styles.postTag}>#ReactNative</Text>
-                    <Text style={styles.postTag}>#Tutorial</Text>
+                    {/* FIXME: ITERATE TAG ARRAY */}
+                    <Text style={styles.postTag}>{tag1}</Text>
+                    <Text style={styles.postTag}>{tag2}</Text>
+                    <Text style={styles.postTag}>{tag3}</Text>
                 </View>
 
                 <View style={styles.postFooterContainer}>
                     <View style={styles.postFooterLeftContainer}>
                         <View style={styles.postFavContainer}>
                             <Feather name="heart" size={24} color="white" />
-                            <Text style={styles.favCount}>32</Text>
+                            <Text style={styles.favCount}>{likes}</Text>
                         </View>
 
                         <View style={styles.postCommentContainer}>
                             <FontAwesome5 name="comment" size={24} color="white" />
-                            <Text style={styles.commentCount}>123</Text>
+                            <Text style={styles.commentCount}>{comments}</Text>
                         </View>
                     </View>
                     <View style={styles.postFooterRightContainer}>
-                        <View><Text style={styles.timeOfRead}>4 min read</Text></View>
+                        <View><Text style={styles.timeOfRead}>{readTime} min read</Text></View>
                         <View style={styles.timeOfReadBtn}><Text style={styles.saveButton}>Save</Text></View>
                     </View>
 
                 </View>
             </View>
         </View >
-
     );
 }
-
 
 const styles = StyleSheet.create({
     container: {
