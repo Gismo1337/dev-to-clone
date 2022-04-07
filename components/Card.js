@@ -1,44 +1,72 @@
 import React from 'react';
 import { Image, Text, StyleSheet, View } from 'react-native';
+import { Feather, FontAwesome5 } from '@expo/vector-icons';
 import Avatar from './Avatar';
 
-export default function Card() {
+export default function Card(props) {
+    console.log(props.data)
+    const data = props.data
+    const imagePath = props.imagePath
 
     return (
         <View style={styles.container}>
-            <View>
+            {imagePath !== '' && <View>
                 <Image
                     style={styles.cardImage}
                     source={{
-                        uri: 'https://reactnative.dev/img/tiny_logo.png',
+                        uri: 'https://images.unsplash.com/photo-1649325401644-41cd4627fa45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
                     }}
                 />
             </View>
+            }
 
 
             <View style={styles.postDetailContainer}>
+                <View style={styles.postDetailTop}>
+                    <View>
+                        <Avatar />
+                    </View>
 
-                <View>
-                    <Avatar />
+
+                    <View style={styles.postDetailInfo}>
+                        <Text style={styles.postAuthor}>Gismo1337</Text>
+
+                        <Text style={styles.postDate}>Apr 6 (1 day ago)</Text>
+                    </View>
                 </View>
 
 
-                <View>
 
-                    <View>
-                        <View>
-                            <Text style={styles.postDetailTitle}>title</Text>
+                <View>
+                    <Text style={styles.postTitle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, quos.</Text>
+                </View>
+
+                <View style={styles.postTagsContainer}>
+                    <Text style={styles.postTag}>#JavaScript</Text>
+                    <Text style={styles.postTag}>#ReactNative</Text>
+                    <Text style={styles.postTag}>#Tutorial</Text>
+                </View>
+
+                <View style={styles.postFooterContainer}>
+                    <View style={styles.postFooterLeftContainer}>
+                        <View style={styles.postFavContainer}>
+                            <Feather name="heart" size={24} color="white" />
+                            <Text style={styles.favCount}>32</Text>
                         </View>
-                        <View>
-                            <Text style={styles.postDetailDate}>sub</Text>
+
+                        <View style={styles.postCommentContainer}>
+                            <FontAwesome5 name="comment" size={24} color="white" />
+                            <Text style={styles.commentCount}>123</Text>
                         </View>
+                    </View>
+                    <View style={styles.postFooterRightContainer}>
+                        <View><Text style={styles.timeOfRead}>4 min read</Text></View>
+                        <View style={styles.timeOfReadBtn}><Text style={styles.saveButton}>Save</Text></View>
                     </View>
 
                 </View>
-
             </View>
-
-        </View>
+        </View >
 
     );
 }
@@ -47,28 +75,105 @@ export default function Card() {
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: 3550,
-        justifyContent: 'flex-start',
+        paddingBottom: 10,
     },
     cardImage: {
         width: '100%',
-        height: 180,
-    },
-    test: {
-        width: '100%',
-        height: 180,
+        height: 160,
     },
     postDetailContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingLeft: 5,
+        paddingTop: 10,
+        paddingLeft: 15,
+        paddingBottom: 15,
+        backgroundColor: '#161616',
     },
-    postDetailTitle: {
+    postDetailTop: {
+        flexDirection: 'row',
+    },
+    postDetailInfo: {
+        flexDirection: 'column',
+    },
+    postAuthor: {
+        fontWeight: 'bold',
         color: 'white',
         paddingLeft: 15,
     },
-    postDetailDate: {
+    postDate: {
+        fontSize: 12,
         color: 'lightgray',
         paddingLeft: 15,
     },
+    postTitle: {
+        color: 'white',
+        fontSize: 24,
+        paddingBottom: 10,
+        fontWeight: 'bold',
+    },
+    postTag: {
+        color: 'lightgray',
+        fontSize: 12,
+        paddingRight: 15,
+    },
+    postTagsContainer: {
+        flexDirection: 'row',
+        paddingBottom: 25,
+    },
+    postFooterContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    postFavContainer: {
+        marginRight: 25,
+        width: 50,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+
+    },
+    postCommentContainer: {
+        width: 50,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    postFooterLeftContainer: {
+        alignItems: 'center',
+        flexDirection: 'row',
+
+    },
+    postFooterRightContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+
+    },
+    favIcon: {
+        color: 'white',
+    },
+    favCount: {
+        color: 'white',
+        paddingLeft: 5,
+    },
+    commentCount: {
+        color: 'white',
+        paddingLeft: 5,
+    },
+    timeOfRead: {
+        color: 'lightgray',
+        fontSize: 12,
+
+    },
+    saveButton: {
+        textAlign: 'center',
+        width: 55,
+        height: 35,
+        backgroundColor: '#363636',
+        borderRadius: 5,
+        color: 'white',
+        textAlignVertical: 'center',
+    },
+    timeOfReadBtn: {
+        marginHorizontal: 15,
+        alignContent: 'center',
+
+    },
 });
+
+//         // 363636

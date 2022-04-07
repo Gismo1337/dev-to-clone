@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+
 import TopBar from './components/TopBar';
-import FeedFilter from './components/FeedFilter';
-import Card from './components/Card';
+import FeedScrollView from './components/FeedScrollView';
 
 export default function App() {
   const [loading, setLoading] = React.useState(true);
@@ -32,8 +32,9 @@ export default function App() {
           backgroundColor="#000"
         />
         <TopBar />
-        <FeedFilter />
-        <Card />
+
+        <FeedScrollView />
+
       </SafeAreaView>
     );
   }

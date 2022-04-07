@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: 50,
-        backgroundColor: '#363636',
+        backgroundColor: '#161616',
         justifyContent: 'center',
     },
     iconViewContainer: {
