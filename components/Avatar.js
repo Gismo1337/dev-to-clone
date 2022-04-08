@@ -1,6 +1,5 @@
 import React from 'react';
-import { Image, Text, StyleSheet, View } from 'react-native';
-
+import { Image, StyleSheet } from 'react-native';
 
 export default function Avatar() {
 
@@ -13,7 +12,6 @@ export default function Avatar() {
         />
     );
 }
-
 
 const styles = StyleSheet.create({
     tinyLogo: {

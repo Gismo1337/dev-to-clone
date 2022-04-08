@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
-
 
 export default function FeedFilter() {
 
@@ -16,7 +15,6 @@ export default function FeedFilter() {
         </View>
     );
 }
-
 
 const styles = StyleSheet.create({
     container: {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import FeedFilter from './FeedFilter';
 import Card from './Card';
 import SearchInput from '../components/SearchInput';
 import SearchFilter from '../components/SearchFilter';
@@ -86,7 +85,6 @@ export default function SearchScrollView() {
                 <>
                     <SearchInput />
                     <SearchFilter />
-                    {/* <FeedFilter /> */}
                 </>
             }
         />

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FontAwesome5, Feather } from '@expo/vector-icons';
-import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function SearchInput() {
 
