@@ -1,25 +1,18 @@
 import React, { useEffect } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-
-
 import Navigator from './routes/Navigator';
-import HomeScreen from './screens/HomeScreen';
-import SearchScreen from './screens/SearchScreen';
-import NotificationScreen from './screens/NotificationScreen';
 
 export default function App() {
   const [loading, setLoading] = React.useState(true);
 
-
+  // Hardcoded Apploadungtime
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
     }, 750);
-
   }, [])
-
 
   if (loading) {
     return (
@@ -28,6 +21,7 @@ export default function App() {
       </View>
     )
   }
+
   else {
     return (
       <NavigationContainer>

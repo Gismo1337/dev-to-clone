@@ -1,8 +1,6 @@
 import React from 'react';
-import FeedScrollView from '../components/FeedScrollView';
 import TopBar from '../components/TopBar';
-import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
-
+import { StyleSheet, Text, View } from 'react-native';
 import NotificationCard from '../components/NotificationCard';
 
 export default function NotificationScreen({ navigation }) {

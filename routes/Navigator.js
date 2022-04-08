@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
@@ -10,9 +8,7 @@ const Stack = createNativeStackNavigator()
 
 export default function Navigator() {
     return (
-
         <Stack.Navigator
-
             initialRouteName='HomeScreen'
             screenOptions={{
                 headerShown: false,
@@ -31,6 +27,5 @@ export default function Navigator() {
                 component={NotificationScreen}
             />
         </Stack.Navigator>
-
     );
 }

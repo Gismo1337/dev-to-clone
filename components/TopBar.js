@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Text, TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
+import React, { useState } from 'react';
+import { TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
 import { FontAwesome5, Feather } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
 import Avatar from './Avatar';
 
 export default function TopBar({ navigation }) {
     const route = useRoute();
-
     const [isActive, setIsActive] = useState(route.name);
-
     let activeRoute = isActive
 
     function onPressSearch() {
@@ -26,19 +24,14 @@ export default function TopBar({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.iconViewContainer}>
-
                 <View style={styles.iconLeftViewContainer}>
-
                     <Feather name="menu" size={24} color="white" />
-
                     <TouchableWithoutFeedback onPress={onPressLogo}>
                         <FontAwesome5 name="dev" size={40} color="black" />
                     </TouchableWithoutFeedback>
-
                 </View>
 
                 <View style={styles.iconRightViewContainer}>
-
                     <TouchableWithoutFeedback onPress={onPressSearch}>
                         <View style={[styles.inActive, activeRoute === 'SearchScreen' && styles.active]}>
                             <FontAwesome5 name="search" size={24} color="white" />
@@ -54,7 +47,6 @@ export default function TopBar({ navigation }) {
                         <Avatar />
                     </View>
                 </View>
-
             </View>
         </View>
     );
