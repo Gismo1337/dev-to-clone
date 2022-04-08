@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
+import { FlatList } from 'react-native';
 import FeedFilter from './FeedFilter';
 import Card from './Card';
 
@@ -32,15 +32,15 @@ const DATA = [
     },
     {
         id: 3,
-        imagePath: 'https://images.unsplash.com/photo-1649261813401-72e38bd5c793?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80',
-        tag1: '#Angular',
-        tag2: '#Beginner',
-        title: 'asdfTutorial of 2022',
-        author: 'GremlinHate',
-        date: 'Dez 20',
-        likes: 41,
-        comments: 62,
-        readTime: 7,
+        imagePath: 'https://images.unsplash.com/photo-1649194270591-8eead57b94c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
+        tag1: '#HTML',
+        tag2: '#CSS',
+        title: 'STEP 1: Learn HTML and CSS',
+        author: 'Tutor',
+        date: 'Nov 20',
+        likes: 1,
+        comments: 2,
+        readTime: 17,
     },
 ];
 
@@ -51,20 +51,12 @@ export default function FeedScrollView() {
     );
 
     return (
-        <View style={styles.container}>
-            <FlatList
-                data={DATA}
-                renderItem={renderItem}
-                keyExtractor={item => item.id}
-                showsVerticalScrollIndicator={false}
-                ListHeaderComponent={<FeedFilter />}
-            />
-        </View>
+        <FlatList
+            data={DATA}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+            showsVerticalScrollIndicator={false}
+            ListHeaderComponent={<FeedFilter />}
+        />
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        width: '100%',
-    }
-});

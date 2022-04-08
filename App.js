@@ -30,10 +30,7 @@ export default function App() {
           animated={true}
           backgroundColor="#000"
         />
-
-
         <HomeScreen />
-
       </SafeAreaView>
     );
   }
