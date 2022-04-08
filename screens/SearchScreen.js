@@ -5,11 +5,11 @@ import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
 
 import SearchScrollView from '../components/SearchScrollView';
 
-export default function SearchScreen() {
+export default function SearchScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <TopBar />
+            <TopBar navigation={navigation} />
             <SearchScrollView />
         </View>
 
@@ -18,6 +18,7 @@ export default function SearchScreen() {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#000',
         width: '100%',
         height: '100%'
     }

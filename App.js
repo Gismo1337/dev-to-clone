@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
+
+import Navigator from './routes/Navigator';
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
 import NotificationScreen from './screens/NotificationScreen';
@@ -27,15 +30,13 @@ export default function App() {
   }
   else {
     return (
-      <SafeAreaView style={styles.container}>
+      <NavigationContainer>
         <StatusBar
           animated={true}
           backgroundColor="#000"
         />
-        {/* <HomeScreen /> */}
-        {/* <SearchScreen /> */}
-        <NotificationScreen />
-      </SafeAreaView>
+        <Navigator />
+      </NavigationContainer>
     );
   }
 }

@@ -5,19 +5,26 @@ import { StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
 
 import NotificationCard from '../components/NotificationCard';
 
-export default function NotificationScreen() {
+export default function NotificationScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <TopBar />
+
+            <TopBar navigation={navigation} />
+
             <View style={styles.topTextContainer}>
+
                 <Text style={styles.title}>Notification</Text>
                 <Text style={styles.text}>Settings</Text>
+
             </View>
+
             <View style={styles.catTextContainer}>
+
                 <Text style={styles.textActive}>All</Text>
                 <Text style={styles.text}>Comments</Text>
                 <Text style={styles.text}>Posts</Text>
+
             </View>
             <NotificationCard />
         </View>
@@ -27,7 +34,7 @@ export default function NotificationScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        backgroundColor: '#000',
         width: '100%',
         height: '100%'
     },
