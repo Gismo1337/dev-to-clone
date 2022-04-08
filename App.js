@@ -4,6 +4,7 @@ import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
 
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
+import NotificationScreen from './screens/NotificationScreen';
 
 export default function App() {
   const [loading, setLoading] = React.useState(true);
@@ -32,7 +33,8 @@ export default function App() {
           backgroundColor="#000"
         />
         {/* <HomeScreen /> */}
-        <SearchScreen />
+        {/* <SearchScreen /> */}
+        <NotificationScreen />
       </SafeAreaView>
     );
   }
