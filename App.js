@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
-import TopBar from './components/TopBar';
 
 import HomeScreen from './screens/HomeScreen';
 
@@ -31,7 +30,7 @@ export default function App() {
           animated={true}
           backgroundColor="#000"
         />
-        <TopBar />
+
 
         <HomeScreen />
 
