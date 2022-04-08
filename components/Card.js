@@ -50,12 +50,12 @@ export default function Card(props) {
 
                         <View style={styles.postFavContainer}>
                             <Feather name="heart" size={24} color="white" />
-                            <Text style={styles.favCount}>{likes}</Text>
+                            {likes > 0 && <Text style={styles.favCount}>{likes}</Text>}
                         </View>
 
                         <View style={styles.postCommentContainer}>
                             <FontAwesome5 name="comment" size={24} color="white" />
-                            <Text style={styles.commentCount}>{comments}</Text>
+                            {comments > 0 && <Text style={styles.commentCount}>{comments}</Text>}
                         </View>
 
                     </View>
@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     },
     postDetailInfo: {
         flexDirection: 'column',
+        marginBottom: 10,
     },
     postAuthor: {
         fontWeight: 'bold',

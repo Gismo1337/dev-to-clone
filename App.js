@@ -3,6 +3,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
 
 import HomeScreen from './screens/HomeScreen';
+import SearchScreen from './screens/SearchScreen';
 
 export default function App() {
   const [loading, setLoading] = React.useState(true);
@@ -30,7 +31,8 @@ export default function App() {
           animated={true}
           backgroundColor="#000"
         />
-        <HomeScreen />
+        {/* <HomeScreen /> */}
+        <SearchScreen />
       </SafeAreaView>
     );
   }
