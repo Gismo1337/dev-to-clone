@@ -5,7 +5,6 @@ import Avatar from './Avatar';
 
 export default function Card(props) {
 
-    console.log(props)
     // HARDCODED TAGS NEED TO BE ARRAY TO ITERATE THROUGH
     const { imagePath, author, date, title, tag1, tag2, tag3, likes, comments, readTime } = props.data;
 

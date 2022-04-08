@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Button, TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
+import { Text, TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
 import { FontAwesome5, Feather } from '@expo/vector-icons';
-
+import { useRoute } from '@react-navigation/native';
 import Avatar from './Avatar';
 
 export default function TopBar({ navigation }) {
+    const route = useRoute();
+
+    const [isActive, setIsActive] = useState(route.name);
+
+    let activeRoute = isActive
 
     function onPressSearch() {
         navigation.navigate('SearchScreen')
@@ -35,14 +40,19 @@ export default function TopBar({ navigation }) {
                 <View style={styles.iconRightViewContainer}>
 
                     <TouchableWithoutFeedback onPress={onPressSearch}>
-                        <FontAwesome5 name="search" size={24} color="white" />
+                        <View style={[styles.inActive, activeRoute === 'SearchScreen' && styles.active]}>
+                            <FontAwesome5 name="search" size={24} color="white" />
+                        </View>
                     </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback onPress={onPressNotifications}>
-                        <FontAwesome5 name="bell" size={24} color="white" />
+                        <View style={[styles.inActive, activeRoute === 'NotificationScreen' && styles.active]}>
+                            <FontAwesome5 name="bell" size={24} color="white" />
+                        </View>
                     </TouchableWithoutFeedback>
-
-                    <Avatar />
+                    <View style={styles.inActive}>
+                        <Avatar />
+                    </View>
                 </View>
 
             </View>
@@ -50,13 +60,27 @@ export default function TopBar({ navigation }) {
     );
 }
 
-
 const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: 50,
         backgroundColor: '#161616',
         justifyContent: 'center',
+    },
+    active: {
+        backgroundColor: '#A78BFA',
+        height: 40,
+        width: 40,
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    inActive: {
+        height: 40,
+        width: 40,
+        borderRadius: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     iconViewContainer: {
         flexDirection: 'row',
