@@ -51,9 +51,7 @@ export default function FeedScrollView() {
     );
 
     return (
-
         <View style={styles.container}>
-
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
@@ -62,21 +60,11 @@ export default function FeedScrollView() {
                 ListHeaderComponent={<FeedFilter />}
             />
         </View>
-
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-    },
-    item: {
-        backgroundColor: '#f9c2ff',
-        padding: 20,
-        marginVertical: 8,
-        marginHorizontal: 16,
-    },
-    title: {
-        fontSize: 32,
-    },
+    }
 });
