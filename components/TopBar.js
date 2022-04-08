@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
+import { Image, TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
 import { FontAwesome5, Feather } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
 import Avatar from './Avatar';
@@ -27,7 +27,9 @@ export default function TopBar({ navigation }) {
                 <View style={styles.iconLeftViewContainer}>
                     <Feather name="menu" size={24} color="white" />
                     <TouchableWithoutFeedback onPress={onPressLogo}>
-                        <FontAwesome5 name="dev" size={40} color="black" />
+
+                        <Image style={styles.logo} source={require('../assets/logoIcon.png')} />
+
                     </TouchableWithoutFeedback>
                 </View>
 
@@ -58,6 +60,13 @@ const styles = StyleSheet.create({
         height: 50,
         backgroundColor: '#161616',
         justifyContent: 'center',
+    },
+    logo: {
+        height: 40,
+        width: 50,
+        marginLeft: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     active: {
         backgroundColor: '#A78BFA',
