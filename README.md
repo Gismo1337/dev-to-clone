@@ -2,6 +2,7 @@
 
 Trying to rebuld the dev.to mobile app frontend to train my skills.
 
-First Preview
+Sneak Preview
 
-![Preview](https://github.com/Gismo1337/dev-to-clone/blob/main/assets/previewFeed.png)
+<img src="https://github.com/Gismo1337/dev-to-clone/blob/main/assets/previewFeed.png" width="200" height="400" />
+<img src="https://github.com/Gismo1337/dev-to-clone/blob/main/assets/previewSearch.png" width="200" height="400" />
