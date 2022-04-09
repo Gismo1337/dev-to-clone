@@ -5,6 +5,8 @@ import { useRoute } from '@react-navigation/native';
 import Avatar from './Avatar';
 
 export default function TopBar({ navigation }) {
+    console.log(navigation)
+
     const route = useRoute();
     const [isActive, setIsActive] = useState(route.name);
     const [modalVisible, setModalVisible] = useState(false);
@@ -27,16 +29,21 @@ export default function TopBar({ navigation }) {
         setModalVisible(!modalVisible)
     }
 
+    function onPressMenu() {
+        navigation.openDrawer()
+    }
+
     return (
         <View style={styles.container}>
 
             <View style={styles.iconViewContainer}>
                 <View style={styles.iconLeftViewContainer}>
-                    <Feather name="menu" size={24} color="white" />
+                    {/* <TouchableWithoutFeedback onPress={onPressMenu}>
+                        <Feather name="menu" size={24} color="white" />
+                    </TouchableWithoutFeedback> */}
+
                     <TouchableWithoutFeedback onPress={onPressLogo}>
-
                         <Image style={styles.logo} source={require('../assets/logoIcon.png')} />
-
                     </TouchableWithoutFeedback>
                 </View>
 

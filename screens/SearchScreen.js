@@ -7,7 +7,7 @@ export default function SearchScreen({ navigation }) {
 
     return (
         <View style={styles.container}>
-            <TopBar navigation={navigation} />
+            {/* <TopBar navigation={navigation} /> */}
             <SearchScrollView navigation={navigation} />
         </View>
     );

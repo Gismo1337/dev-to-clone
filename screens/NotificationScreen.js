@@ -8,7 +8,7 @@ export default function NotificationScreen({ navigation }) {
     return (
         <View style={styles.container}>
 
-            <TopBar navigation={navigation} />
+            {/* <TopBar navigation={navigation} /> */}
 
             <View style={styles.topTextContainer}>
 

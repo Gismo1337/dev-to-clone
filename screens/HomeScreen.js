@@ -6,7 +6,7 @@ import { SafeAreaView, StyleSheet, Text, View, FlatList, ScrollView } from 'reac
 export default function HomeScreen({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
-            <TopBar navigation={navigation} />
+            {/* <TopBar navigation={navigation} /> */}
             <FeedScrollView navigation={navigation} />
         </SafeAreaView>
     );
