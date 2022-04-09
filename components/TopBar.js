@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image, TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
+import { Pressable, Text, Modal, Image, TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
 import { FontAwesome5, Feather } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
 import Avatar from './Avatar';
@@ -7,6 +7,8 @@ import Avatar from './Avatar';
 export default function TopBar({ navigation }) {
     const route = useRoute();
     const [isActive, setIsActive] = useState(route.name);
+    const [modalVisible, setModalVisible] = useState(false);
+
     let activeRoute = isActive
 
     function onPressSearch() {
@@ -21,8 +23,13 @@ export default function TopBar({ navigation }) {
         navigation.navigate('HomeScreen')
     }
 
+    function onPressAvatar() {
+        setModalVisible(!modalVisible)
+    }
+
     return (
         <View style={styles.container}>
+
             <View style={styles.iconViewContainer}>
                 <View style={styles.iconLeftViewContainer}>
                     <Feather name="menu" size={24} color="white" />
@@ -45,11 +52,41 @@ export default function TopBar({ navigation }) {
                             <FontAwesome5 name="bell" size={24} color="white" />
                         </View>
                     </TouchableWithoutFeedback>
-                    <View style={styles.inActive}>
-                        <Avatar />
-                    </View>
+
+                    <TouchableWithoutFeedback onPress={onPressAvatar}>
+                        <View style={styles.inActive}>
+                            <Avatar />
+                        </View>
+                    </TouchableWithoutFeedback>
                 </View>
+                <Modal
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => {
+                        Alert.alert('Modal has been closed.');
+                        setModalVisible(!modalVisible);
+                    }}>
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <Text style={styles.modalText}>Sebastian Richter</Text>
+                            <Text style={styles.modalText}>@gismo1337</Text>
+                            <Text style={styles.modalText}>_________________</Text>
+                            <Text style={styles.modalText}>Dashboard</Text>
+                            <Text style={styles.modalText}>Create Post</Text>
+                            <Text style={styles.modalText}>Reading list</Text>
+                            <Text style={styles.modalText}>Settings</Text>
+                            <Text style={styles.modalText}>_________________</Text>
+                            <Text style={styles.modalText}>Sign Out</Text>
+                            <Pressable
+                                style={[styles.button, styles.buttonClose]}
+                                onPress={() => setModalVisible(!modalVisible)}>
+                                <Text style={styles.textStyle}>Hide Modal</Text>
+                            </Pressable>
+                        </View>
+                    </View>
+                </Modal>
             </View>
+
         </View>
     );
 }
@@ -101,5 +138,31 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: 130,
         paddingRight: 5,
+    },
+    centeredView: {
+        alignItems: 'center',
+        marginTop: 55,
+    },
+    modalView: {
+        width: '95%',
+        backgroundColor: '#161616',
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#363636',
+        padding: 5,
+        alignItems: 'flex-start',
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+    },
+    modalText: {
+        color: 'white',
+        marginBottom: 15,
+        textAlign: 'center',
     },
 });
