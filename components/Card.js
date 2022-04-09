@@ -31,9 +31,9 @@ export default function Card(props) {
                 <View style={styles.postDetailContainer}>
                     <View style={styles.postDetailTop}>
 
-                        <View>
-                            <Avatar />
-                        </View>
+
+                        <Avatar />
+
 
                         <View style={styles.postDetailInfo}>
                             <Text style={styles.postAuthor}>{author}</Text>

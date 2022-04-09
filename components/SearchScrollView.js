@@ -69,10 +69,10 @@ const DATA = [
     },
 ];
 
-export default function SearchScrollView() {
+export default function SearchScrollView({ navigation }) {
 
     const renderItem = ({ item }) => (
-        < Card data={item} />
+        < Card data={item} navigation={navigation} />
     );
 
     return (

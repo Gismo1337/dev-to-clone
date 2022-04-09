@@ -1,10 +1,7 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
 import { Image, Text, StyleSheet, View } from 'react-native';
-import SearchScrollView from '../components/SearchScrollView';
-import { Feather, FontAwesome5 } from '@expo/vector-icons';
 import Avatar from '../components/Avatar';
-
 
 export default function CardDetailScreen(props) {
 
@@ -25,9 +22,9 @@ export default function CardDetailScreen(props) {
             <View style={styles.postDetailContainer}>
                 <View style={styles.postDetailTop}>
 
-                    <View>
-                        <Avatar />
-                    </View>
+
+                    <Avatar />
+
 
                     <View style={styles.postDetailInfo}>
                         <Text style={styles.postAuthor}>{author}</Text>
@@ -50,10 +47,7 @@ export default function CardDetailScreen(props) {
                 <View style={styles.postTextContainer}>
                     <Text style={styles.postText}>{text}</Text>
                 </View>
-
-
             </View>
-
         </View >
     );
 }
@@ -64,12 +58,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         width: '100%',
         height: '100%',
+    },
 
-    },
-    text: {
-        color: 'white',
-        width: '100%',
-    },
     cardImage: {
         marginTop: 2,
         width: '100%',
@@ -125,62 +115,6 @@ const styles = StyleSheet.create({
     postTextContainer: {
         flexDirection: 'row',
         paddingBottom: 25,
-
-    },
-    postFooterContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    postFavContainer: {
-        marginRight: 25,
-        width: 50,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-
-    },
-    postCommentContainer: {
-        width: 50,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-    },
-    postFooterLeftContainer: {
-        alignItems: 'center',
-        flexDirection: 'row',
-
-    },
-    postFooterRightContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-
-    },
-    favIcon: {
-        color: 'white',
-    },
-    favCount: {
-        color: 'white',
-        paddingLeft: 5,
-    },
-    commentCount: {
-        color: 'white',
-        paddingLeft: 5,
-    },
-    timeOfRead: {
-        color: 'lightgray',
-        fontSize: 12,
-
-    },
-    saveButton: {
-        textAlign: 'center',
-        width: 55,
-        height: 35,
-        backgroundColor: '#363636',
-        borderRadius: 5,
-        color: 'white',
-        textAlignVertical: 'center',
-    },
-    timeOfReadBtn: {
-        marginHorizontal: 15,
-        alignContent: 'center',
 
     },
 });
