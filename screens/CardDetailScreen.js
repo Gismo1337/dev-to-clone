@@ -1,54 +1,60 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
-import { Image, Text, StyleSheet, View } from 'react-native';
+import { Image, Text, ScrollView, StyleSheet, View } from 'react-native';
 import Avatar from '../components/Avatar';
 
 export default function CardDetailScreen(props) {
 
     const { imagePath, author, date, title, tag1, tag2, tag3, likes, comments, readTime, text } = props.route.params;
     return (
-        <View style={styles.container}>
+        <>
             <TopBar navigation={props.navigation} />
-
-            {imagePath !== '' && <View>
-                <Image
-                    style={styles.cardImage}
-                    source={{
-                        uri: imagePath,
-                    }}
-                />
-            </View>}
-
-            <View style={styles.postDetailContainer}>
-                <View style={styles.postDetailTop}>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                style={styles.container}
+            >
 
 
-                    <Avatar />
+                {imagePath !== '' && <View>
+                    <Image
+                        style={styles.cardImage}
+                        source={{
+                            uri: imagePath,
+                        }}
+                    />
+                </View>}
+
+                <View style={styles.postDetailContainer}>
+                    <View style={styles.postDetailTop}>
 
 
-                    <View style={styles.postDetailInfo}>
-                        <Text style={styles.postAuthor}>{author}</Text>
-                        <Text style={styles.postDate}>{date} (1 day ago)</Text>
+                        <Avatar />
+
+
+                        <View style={styles.postDetailInfo}>
+                            <Text style={styles.postAuthor}>{author}</Text>
+                            <Text style={styles.postDate}>{date} (1 day ago)</Text>
+                        </View>
+
                     </View>
 
-                </View>
+                    <View>
+                        <Text style={styles.postTitle}>{title}</Text>
+                    </View>
 
-                <View>
-                    <Text style={styles.postTitle}>{title}</Text>
-                </View>
+                    <View style={styles.postTagsContainer}>
+                        {/* FIXME: ITERATE TAG ARRAY */}
+                        <Text style={styles.postTag}>{tag1}</Text>
+                        <Text style={styles.postTag}>{tag2}</Text>
+                        <Text style={styles.postTag}>{tag3}</Text>
+                    </View>
 
-                <View style={styles.postTagsContainer}>
-                    {/* FIXME: ITERATE TAG ARRAY */}
-                    <Text style={styles.postTag}>{tag1}</Text>
-                    <Text style={styles.postTag}>{tag2}</Text>
-                    <Text style={styles.postTag}>{tag3}</Text>
+                    <View style={styles.postTextContainer}>
+                        <Text style={styles.postText}>{text}</Text>
+                    </View>
                 </View>
-
-                <View style={styles.postTextContainer}>
-                    <Text style={styles.postText}>{text}</Text>
-                </View>
-            </View>
-        </View >
+            </ScrollView >
+        </>
     );
 }
 

@@ -17,7 +17,7 @@ const DATA = [
         likes: 31,
         comments: 22,
         readTime: 5,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi?',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi? ',
     },
     {
         id: 2,
