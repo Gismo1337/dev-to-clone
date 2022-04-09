@@ -17,6 +17,7 @@ const DATA = [
         likes: 31,
         comments: 22,
         readTime: 5,
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi?',
     },
     {
         id: 2,
@@ -29,6 +30,7 @@ const DATA = [
         likes: 41,
         comments: 62,
         readTime: 7,
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi?',
     },
     {
         id: 3,
@@ -41,13 +43,27 @@ const DATA = [
         likes: 1,
         comments: 2,
         readTime: 17,
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi?',
+    },
+    {
+        id: 4,
+        imagePath: '',
+        tag1: '#Angular',
+        tag2: '#IDE',
+        title: 'Topic without an image',
+        author: 'Basti',
+        date: 'Nov 22',
+        likes: 0,
+        comments: 0,
+        readTime: 17,
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi?',
     },
 ];
 
-export default function FeedScrollView() {
+export default function FeedScrollView({ navigation }) {
 
     const renderItem = ({ item }) => (
-        < Card data={item} />
+        < Card data={item} navigation={navigation} />
     );
 
     return (

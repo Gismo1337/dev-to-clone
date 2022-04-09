@@ -7,7 +7,7 @@ export default function HomeScreen({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             <TopBar navigation={navigation} />
-            <FeedScrollView />
+            <FeedScrollView navigation={navigation} />
         </SafeAreaView>
     );
 }

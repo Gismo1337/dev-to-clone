@@ -1,81 +1,82 @@
 import React from 'react';
-import { Image, Text, TouchableWithoutFeedback, StyleSheet, View } from 'react-native';
+import TopBar from '../components/TopBar';
+import { Image, Text, StyleSheet, View } from 'react-native';
+import SearchScrollView from '../components/SearchScrollView';
 import { Feather, FontAwesome5 } from '@expo/vector-icons';
-import Avatar from './Avatar';
-import PostFooter from '../components/PostFooter';
-
-export default function Card(props) {
+import Avatar from '../components/Avatar';
 
 
-    // HARDCODED TAGS NEED TO BE ARRAY TO ITERATE THROUGH
-    const { imagePath, author, date, title, tag1, tag2, tag3, likes, comments, readTime } = props.data;
-    // const { navigation } = props.navigation
+export default function CardDetailScreen(props) {
 
-    function onPressCard() {
-        props.navigation.navigate('CardDetailScreen', props.data)
-    }
-
+    const { imagePath, author, date, title, tag1, tag2, tag3, likes, comments, readTime, text } = props.route.params;
     return (
+        <View style={styles.container}>
+            <TopBar navigation={props.navigation} />
 
-        <TouchableWithoutFeedback onPress={onPressCard}>
-            <View style={styles.container}>
-                {imagePath !== '' && <View>
-                    <Image
-                        style={styles.cardImage}
-                        source={{
-                            uri: imagePath,
-                        }}
-                    />
-                </View>}
+            {imagePath !== '' && <View>
+                <Image
+                    style={styles.cardImage}
+                    source={{
+                        uri: imagePath,
+                    }}
+                />
+            </View>}
 
-                <View style={styles.postDetailContainer}>
-                    <View style={styles.postDetailTop}>
-
-                        <View>
-                            <Avatar />
-                        </View>
-
-                        <View style={styles.postDetailInfo}>
-                            <Text style={styles.postAuthor}>{author}</Text>
-                            <Text style={styles.postDate}>{date} (1 day ago)</Text>
-                        </View>
-
-                    </View>
+            <View style={styles.postDetailContainer}>
+                <View style={styles.postDetailTop}>
 
                     <View>
-                        <Text style={styles.postTitle}>{title}</Text>
+                        <Avatar />
                     </View>
 
-                    <View style={styles.postTagsContainer}>
-                        {/* FIXME: ITERATE TAG ARRAY */}
-                        <Text style={styles.postTag}>{tag1}</Text>
-                        <Text style={styles.postTag}>{tag2}</Text>
-                        <Text style={styles.postTag}>{tag3}</Text>
+                    <View style={styles.postDetailInfo}>
+                        <Text style={styles.postAuthor}>{author}</Text>
+                        <Text style={styles.postDate}>{date} (1 day ago)</Text>
                     </View>
-
-                    <PostFooter data={props.data} />
 
                 </View>
-            </View >
-        </TouchableWithoutFeedback>
+
+                <View>
+                    <Text style={styles.postTitle}>{title}</Text>
+                </View>
+
+                <View style={styles.postTagsContainer}>
+                    {/* FIXME: ITERATE TAG ARRAY */}
+                    <Text style={styles.postTag}>{tag1}</Text>
+                    <Text style={styles.postTag}>{tag2}</Text>
+                    <Text style={styles.postTag}>{tag3}</Text>
+                </View>
+
+                <View style={styles.postTextContainer}>
+                    <Text style={styles.postText}>{text}</Text>
+                </View>
+
+
+            </View>
+
+        </View >
     );
 }
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
+        backgroundColor: '#000',
         width: '100%',
-        paddingBottom: 10,
-        borderTopWidth: 1,
-        borderColor: '#363636',
+        height: '100%',
 
     },
+    text: {
+        color: 'white',
+        width: '100%',
+    },
     cardImage: {
+        marginTop: 2,
         width: '100%',
         height: 160,
     },
     postDetailContainer: {
-        borderBottomWidth: 1,
-        borderColor: '#363636',
+        marginTop: 2,
         paddingTop: 10,
         paddingLeft: 15,
         paddingBottom: 15,
@@ -109,9 +110,22 @@ const styles = StyleSheet.create({
         fontSize: 12,
         paddingRight: 15,
     },
+    postText: {
+        color: 'lightgray',
+        fontSize: 16,
+        lineHeight: 32,
+        paddingRight: 15,
+        fontFamily: 'monospace'
+    },
     postTagsContainer: {
         flexDirection: 'row',
         paddingBottom: 25,
+        marginLeft: 10,
+    },
+    postTextContainer: {
+        flexDirection: 'row',
+        paddingBottom: 25,
+
     },
     postFooterContainer: {
         flexDirection: 'row',
@@ -170,5 +184,3 @@ const styles = StyleSheet.create({
 
     },
 });
-
-//         // 363636

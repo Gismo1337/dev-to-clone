@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
+import CardDetailScreen from '../screens/CardDetailScreen';
 
 const Stack = createNativeStackNavigator()
 
@@ -25,6 +26,10 @@ export default function Navigator() {
             <Stack.Screen
                 name='NotificationScreen'
                 component={NotificationScreen}
+            />
+            <Stack.Screen
+                name='CardDetailScreen'
+                component={CardDetailScreen}
             />
         </Stack.Navigator>
     );
