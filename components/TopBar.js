@@ -5,7 +5,6 @@ import { useRoute } from '@react-navigation/native';
 import Avatar from './Avatar';
 
 export default function TopBar({ navigation }) {
-    console.log(navigation)
 
     const route = useRoute();
     const [isActive, setIsActive] = useState(route.name);
