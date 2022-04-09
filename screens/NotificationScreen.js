@@ -25,6 +25,14 @@ export default function NotificationScreen({ navigation }) {
 
             </View>
             <NotificationCard />
+            <NotificationCard />
+            <NotificationCard />
+            <NotificationCard />
+            <NotificationCard />
+            <NotificationCard />
+            <NotificationCard />
+            <NotificationCard />
+            <NotificationCard />
         </View>
 
     );
