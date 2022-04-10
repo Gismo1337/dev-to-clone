@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, Modal, StyleSheet } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 
 export default function UserModal(props) {
     console.log(props)
@@ -9,19 +9,20 @@ export default function UserModal(props) {
 
         <View style={styles.centeredView}>
             <View style={styles.modalView}>
-                <Text style={styles.modalText}>Sebastian Richter</Text>
-                <Text style={styles.modalText}>@gismo1337</Text>
-                <Text style={styles.modalText}>_________________</Text>
+                <Text style={styles.userNameText}>Sebastian Richter</Text>
+                <Text style={styles.userNicknameText}>@gismo1337</Text>
+                <View style={styles.divider} />
                 <Text style={styles.modalText}>Dashboard</Text>
                 <Text style={styles.modalText}>Create Post</Text>
                 <Text style={styles.modalText}>Reading list</Text>
                 <Text style={styles.modalText}>Settings</Text>
-                <Text style={styles.modalText}>_________________</Text>
+                <View style={styles.divider} />
                 <Text style={styles.modalText}>Sign Out</Text>
+                {/* FIXME: For Development only */}
                 <Pressable
                     style={[styles.button, styles.buttonClose]}
                     onPress={() => setModalVisible(false)}>
-                    <Text style={styles.textStyle}>Hide Modal</Text>
+                    <Text style={styles.textStyle}>close - for develop only</Text>
                 </Pressable>
             </View>
         </View>
@@ -55,5 +56,23 @@ const styles = StyleSheet.create({
         color: 'white',
         marginBottom: 15,
         textAlign: 'center',
+        paddingLeft: 15,
     },
+    userNicknameText: {
+        color: '#9C9C9C',
+        marginBottom: 15,
+        textAlign: 'center',
+        paddingLeft: 15,
+    },
+    userNameText: {
+        color: 'lightgray',
+        textAlign: 'center',
+        paddingLeft: 15,
+    },
+    divider: {
+        borderBottomColor: '#363636',
+        borderBottomWidth: 1,
+        width: '100%',
+        marginBottom: 20,
+    }
 });
