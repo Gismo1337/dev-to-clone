@@ -6,6 +6,8 @@ import Avatar from './Avatar';
 
 export default function TopBar({ navigation }) {
 
+
+
     const route = useRoute();
     const [isActive, setIsActive] = useState(route.name);
     const [modalVisible, setModalVisible] = useState(false);

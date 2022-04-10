@@ -8,9 +8,13 @@ import DrawerContent from '../screens/DrawerContent';
 
 const Drawer = createDrawerNavigator();
 
+
+
 export default function DrawerNavigator({ navigation }) {
+
+
     return (
-        <Drawer.Navigator drawerContent={props => <DrawerContent />}>
+        <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
             <Drawer.Screen
                 name='HomeScreen'
                 component={HomeScreen}
@@ -38,6 +42,14 @@ export default function DrawerNavigator({ navigation }) {
             <Drawer.Screen
                 name='CardDetailScreen'
                 component={CardDetailScreen}
+                options={{
+                    headerShown: false,
+                }
+                }
+            />
+            <Drawer.Screen
+                name='DrawerContent'
+                component={DrawerContent}
                 options={{
                     headerShown: false,
                 }
