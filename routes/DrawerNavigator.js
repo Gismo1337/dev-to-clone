@@ -4,23 +4,18 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import CardDetailScreen from '../screens/CardDetailScreen';
-import TopBar from '../components/TopBar';
+import DrawerContent from '../screens/DrawerContent';
 
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator({ navigation }) {
     return (
-        <Drawer.Navigator>
+        <Drawer.Navigator drawerContent={props => <DrawerContent />}>
             <Drawer.Screen
                 name='HomeScreen'
                 component={HomeScreen}
                 options={{
-                    headerTitle: (props) => <TopBar navigation={navigation} />,
-                    headerStyle: {
-                        backgroundColor: '#161616',
-                    },
-                    headerTintColor: '#fff',
-
+                    headerShown: false,
                 }
                 }
             />
@@ -28,11 +23,7 @@ export default function DrawerNavigator({ navigation }) {
                 name='SearchScreen'
                 component={SearchScreen}
                 options={{
-                    headerTitle: (props) => <TopBar navigation={navigation} />,
-                    headerStyle: {
-                        backgroundColor: '#161616',
-                    },
-                    headerTintColor: '#fff',
+                    headerShown: false,
                 }
                 }
             />
@@ -40,11 +31,15 @@ export default function DrawerNavigator({ navigation }) {
                 name='NotificationScreen'
                 component={NotificationScreen}
                 options={{
-                    headerTitle: (props) => <TopBar navigation={navigation} />,
-                    headerStyle: {
-                        backgroundColor: '#161616',
-                    },
-                    headerTintColor: '#fff',
+                    headerShown: false,
+                }
+                }
+            />
+            <Drawer.Screen
+                name='CardDetailScreen'
+                component={CardDetailScreen}
+                options={{
+                    headerShown: false,
                 }
                 }
             />

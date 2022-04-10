@@ -13,7 +13,7 @@ export default function Navigator({ navigation }) {
         <Stack.Navigator
             // initialRouteName='HomeScreen'
             screenOptions={{
-                headerShown: true,
+                headerShown: false,
                 animationEnabled: false
             }}>
             <Stack.Screen
@@ -25,12 +25,7 @@ export default function Navigator({ navigation }) {
                 name='HomeScreen'
                 component={HomeScreen}
                 options={{
-                    headerTitle: (props) => <TopBar navigation={navigation} />,
-                    headerStyle: {
-                        backgroundColor: '#161616',
-                    },
-                    headerTintColor: '#fff',
-
+                    headerShown: false,
                 }
                 }
             />
@@ -38,12 +33,7 @@ export default function Navigator({ navigation }) {
                 name='SearchScreen'
                 component={SearchScreen}
                 options={{
-                    headerTitle: (props) => <TopBar navigation={navigation} />,
-                    headerStyle: {
-                        backgroundColor: '#161616',
-                    },
-                    headerTintColor: '#fff',
-
+                    headerShown: false,
                 }
                 }
             />
@@ -51,12 +41,7 @@ export default function Navigator({ navigation }) {
                 name='NotificationScreen'
                 component={NotificationScreen}
                 options={{
-                    headerTitle: (props) => <TopBar navigation={navigation} />,
-                    headerStyle: {
-                        backgroundColor: '#161616',
-                    },
-                    headerTintColor: '#fff',
-
+                    headerShown: false,
                 }
                 }
             />
@@ -64,12 +49,7 @@ export default function Navigator({ navigation }) {
                 name='CardDetailScreen'
                 component={CardDetailScreen}
                 options={{
-                    headerTitle: (props) => <TopBar navigation={navigation} />,
-                    headerStyle: {
-                        backgroundColor: '#161616',
-                    },
-                    headerTintColor: '#fff',
-
+                    headerShown: false,
                 }
                 }
             />

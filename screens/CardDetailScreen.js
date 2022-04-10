@@ -5,6 +5,8 @@ import Avatar from '../components/Avatar';
 
 export default function CardDetailScreen(props) {
 
+    console.log(props.navigation)
+
     const { imagePath, author, date, title, tag1, tag2, tag3, likes, comments, readTime, text } = props.route.params;
     return (
         <>

@@ -29,7 +29,7 @@ export default function TopBar({ navigation }) {
     }
 
     function onPressMenu() {
-        navigation.openDrawer()
+        navigation.toggleDrawer()
     }
 
     return (
@@ -37,9 +37,9 @@ export default function TopBar({ navigation }) {
 
             <View style={styles.iconViewContainer}>
                 <View style={styles.iconLeftViewContainer}>
-                    {/* <TouchableWithoutFeedback onPress={onPressMenu}>
+                    <TouchableWithoutFeedback onPress={onPressMenu}>
                         <Feather name="menu" size={24} color="white" />
-                    </TouchableWithoutFeedback> */}
+                    </TouchableWithoutFeedback>
 
                     <TouchableWithoutFeedback onPress={onPressLogo}>
                         <Image style={styles.logo} source={require('../assets/logoIcon.png')} />
