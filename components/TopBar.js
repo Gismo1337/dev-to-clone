@@ -3,14 +3,15 @@ import { Pressable, Text, Modal, Image, TouchableWithoutFeedback, StyleSheet, Vi
 import { FontAwesome5, Feather } from '@expo/vector-icons';
 import { useRoute } from '@react-navigation/native';
 import Avatar from './Avatar';
+import UserModal from './UserModal';
 
 export default function TopBar({ navigation }) {
-
+    const [modalVisible, setModalVisible] = useState(false);
 
 
     const route = useRoute();
     const [isActive, setIsActive] = useState(route.name);
-    const [modalVisible, setModalVisible] = useState(false);
+
 
     let activeRoute = isActive
 
@@ -74,24 +75,8 @@ export default function TopBar({ navigation }) {
                         Alert.alert('Modal has been closed.');
                         setModalVisible(!modalVisible);
                     }}>
-                    <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <Text style={styles.modalText}>Sebastian Richter</Text>
-                            <Text style={styles.modalText}>@gismo1337</Text>
-                            <Text style={styles.modalText}>_________________</Text>
-                            <Text style={styles.modalText}>Dashboard</Text>
-                            <Text style={styles.modalText}>Create Post</Text>
-                            <Text style={styles.modalText}>Reading list</Text>
-                            <Text style={styles.modalText}>Settings</Text>
-                            <Text style={styles.modalText}>_________________</Text>
-                            <Text style={styles.modalText}>Sign Out</Text>
-                            <Pressable
-                                style={[styles.button, styles.buttonClose]}
-                                onPress={() => setModalVisible(!modalVisible)}>
-                                <Text style={styles.textStyle}>Hide Modal</Text>
-                            </Pressable>
-                        </View>
-                    </View>
+                    <UserModal toggleFunction={setModalVisible} />
+
                 </Modal>
             </View>
 
