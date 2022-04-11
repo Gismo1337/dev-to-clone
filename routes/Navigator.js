@@ -5,7 +5,8 @@ import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import CardDetailScreen from '../screens/CardDetailScreen';
 import DrawerNavigator from './DrawerNavigator';
-import TopBar from '../components/TopBar';
+import UserProfileScreen from '../screens/UserProfileScreen';
+
 const Stack = createNativeStackNavigator()
 
 export default function Navigator({ navigation }) {
@@ -48,6 +49,14 @@ export default function Navigator({ navigation }) {
             <Stack.Screen
                 name='CardDetailScreen'
                 component={CardDetailScreen}
+                options={{
+                    headerShown: false,
+                }
+                }
+            />
+            <Stack.Screen
+                name='UserProfileScreen'
+                component={UserProfileScreen}
                 options={{
                     headerShown: false,
                 }

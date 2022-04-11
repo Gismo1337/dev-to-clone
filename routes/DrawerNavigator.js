@@ -5,10 +5,9 @@ import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import CardDetailScreen from '../screens/CardDetailScreen';
 import DrawerContent from '../screens/DrawerContent';
+import UserProfileScreen from '../screens/UserProfileScreen';
 
 const Drawer = createDrawerNavigator();
-
-
 
 export default function DrawerNavigator({ navigation }) {
 
@@ -18,41 +17,55 @@ export default function DrawerNavigator({ navigation }) {
             <Drawer.Screen
                 name='HomeScreen'
                 component={HomeScreen}
-                options={{
-                    headerShown: false,
-                }
+                options={
+                    {
+                        headerShown: false,
+                    }
                 }
             />
             <Drawer.Screen
                 name='SearchScreen'
                 component={SearchScreen}
-                options={{
-                    headerShown: false,
-                }
+                options={
+                    {
+                        headerShown: false,
+                    }
                 }
             />
             <Drawer.Screen
                 name='NotificationScreen'
                 component={NotificationScreen}
-                options={{
-                    headerShown: false,
-                }
+                options={
+                    {
+                        headerShown: false,
+                    }
                 }
             />
             <Drawer.Screen
                 name='CardDetailScreen'
                 component={CardDetailScreen}
-                options={{
-                    headerShown: false,
-                }
+                options={
+                    {
+                        headerShown: false,
+                    }
                 }
             />
             <Drawer.Screen
                 name='DrawerContent'
                 component={DrawerContent}
-                options={{
-                    headerShown: false,
+                options={
+                    {
+                        headerShown: false,
+                    }
                 }
+            />
+            <Drawer.Screen
+                name='UserProfileScreen'
+                component={UserProfileScreen}
+                options={
+                    {
+                        headerShown: false,
+                    }
                 }
             />
         </Drawer.Navigator>

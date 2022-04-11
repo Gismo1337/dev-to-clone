@@ -7,75 +7,53 @@ import UserModal from './UserModal';
 
 export default function TopBar({ navigation }) {
     const [modalVisible, setModalVisible] = useState(false);
-
-
     const route = useRoute();
     const [isActive, setIsActive] = useState(route.name);
 
-
     let activeRoute = isActive
-
-    function onPressSearch() {
-        navigation.navigate('SearchScreen')
-    }
-
-    function onPressNotifications() {
-        navigation.navigate('NotificationScreen')
-    }
-
-    function onPressLogo() {
-        navigation.navigate('HomeScreen')
-    }
-
-    function onPressAvatar() {
-        setModalVisible(!modalVisible)
-    }
-
-    function onPressMenu() {
-        navigation.toggleDrawer()
-    }
 
     return (
         <View style={styles.container}>
 
             <View style={styles.iconViewContainer}>
                 <View style={styles.iconLeftViewContainer}>
-                    <TouchableWithoutFeedback onPress={onPressMenu}>
+                    <TouchableWithoutFeedback onPress={() => navigation.toggleDrawer()}>
                         <Feather name="menu" size={24} color="white" />
                     </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback onPress={onPressLogo}>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate('HomeScreen')}>
                         <Image style={styles.logo} source={require('../assets/logoIcon.png')} />
                     </TouchableWithoutFeedback>
                 </View>
 
                 <View style={styles.iconRightViewContainer}>
-                    <TouchableWithoutFeedback onPress={onPressSearch}>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate('SearchScreen')}>
                         <View style={[styles.inActive, activeRoute === 'SearchScreen' && styles.active]}>
                             <FontAwesome5 name="search" size={24} color="white" />
                         </View>
                     </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback onPress={onPressNotifications}>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate('NotificationScreen')}>
                         <View style={[styles.inActive, activeRoute === 'NotificationScreen' && styles.active]}>
                             <FontAwesome5 name="bell" size={24} color="white" />
                         </View>
                     </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback onPress={onPressAvatar}>
+                    <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
                         <View style={styles.inActive}>
                             <Avatar />
                         </View>
                     </TouchableWithoutFeedback>
                 </View>
+
                 <Modal
                     transparent={true}
                     visible={modalVisible}
                     onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
+
                         setModalVisible(!modalVisible);
                     }}>
-                    <UserModal toggleFunction={setModalVisible} />
+                    <UserModal toggleFunction={setModalVisible} navigation={navigation} />
 
                 </Modal>
             </View>

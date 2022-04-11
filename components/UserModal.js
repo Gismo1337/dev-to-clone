@@ -1,17 +1,32 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, TouchableWithoutFeedback, Text, Pressable, StyleSheet } from 'react-native';
 
 export default function UserModal(props) {
-    console.log(props)
+
+    const navigation = props.navigation;
     const setModalVisible = props.toggleFunction
 
     return (
 
         <View style={styles.centeredView}>
             <View style={styles.modalView}>
-                <Text style={styles.userNameText}>Sebastian Richter</Text>
-                <Text style={styles.userNicknameText}>@gismo1337</Text>
+
+                <TouchableWithoutFeedback onPress={() => {
+                    navigation.navigate('UserProfileScreen')
+                    setModalVisible(false)
+                }}>
+                    <Text style={styles.userNameText}>Sebastian Richter</Text>
+                </TouchableWithoutFeedback>
+
+                <TouchableWithoutFeedback onPress={() => {
+                    navigation.navigate('UserProfileScreen')
+                    setModalVisible(false)
+                }}>
+                    <Text style={styles.userNicknameText}>@gismo1337</Text>
+                </TouchableWithoutFeedback>
+
                 <View style={styles.divider} />
+
                 <Text style={styles.modalText}>Dashboard</Text>
                 <Text style={styles.modalText}>Create Post</Text>
                 <Text style={styles.modalText}>Reading list</Text>
@@ -25,7 +40,7 @@ export default function UserModal(props) {
                     <Text style={styles.textStyle}>close - for develop only</Text>
                 </Pressable>
             </View>
-        </View>
+        </View >
 
     );
 }
