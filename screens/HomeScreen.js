@@ -3,12 +3,13 @@ import FeedScrollView from '../components/FeedScrollView';
 import TopBar from '../components/TopBar';
 import { SafeAreaView, StyleSheet, Text, View, FlatList, ScrollView } from 'react-native';
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ feedData }, { navigation }) {
+
 
     return (
         <SafeAreaView style={styles.container}>
             <TopBar navigation={navigation} />
-            <FeedScrollView navigation={navigation} />
+            <FeedScrollView feedData={feedData} navigation={navigation} />
         </SafeAreaView>
     );
 }

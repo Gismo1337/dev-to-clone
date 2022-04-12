@@ -60,7 +60,10 @@ const DATA = [
     },
 ];
 
-export default function FeedScrollView({ navigation }) {
+export default function FeedScrollView({ feedData }, { navigation }) {
+
+    console.log(feedData)
+
 
     const renderItem = ({ item }) => (
         < Card data={item} navigation={navigation} />

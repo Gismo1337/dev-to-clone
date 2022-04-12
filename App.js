@@ -1,24 +1,36 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import Navigator from './routes/Navigator';
 import DrawerNavigator from './routes/DrawerNavigator';
 
 export default function App() {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = useState(true);
+  const [feedData, setFeedData] = useState({});
+
+  _getFeedData = async () => {
+    try {
+      const response = await fetch('https://github.com/Gismo1337/dev-to-clone/users')
+        .then(response => response.json())
+      setFeedData(response)
+      setLoading(false)
+    } catch (error) {
+      console.log('Error on fetching data: ', error)
+    }
+
+
+  };
+
 
   // Hardcoded Apploadungtime
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 50);
+    _getFeedData()
   }, [])
 
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <FontAwesome5 name="dev" size={96} color="white" />
+        <FontAwesome5 name="dev" size={96} color="#fff" />
       </View>
     )
   }
@@ -30,8 +42,7 @@ export default function App() {
           animated={true}
           backgroundColor="#000"
         />
-
-        <Navigator />
+        <DrawerNavigator feedData={feedData} />
       </NavigationContainer>
 
     );

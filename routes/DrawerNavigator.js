@@ -9,14 +9,13 @@ import UserProfileScreen from '../screens/UserProfileScreen';
 
 const Drawer = createDrawerNavigator();
 
-export default function DrawerNavigator({ navigation }) {
-
+export default function DrawerNavigator({ feedData }, { navigation }) {
 
     return (
         <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
             <Drawer.Screen
                 name='HomeScreen'
-                component={HomeScreen}
+                component={props => <HomeScreen {...props} feedData={feedData} />}
                 options={
                     {
                         headerShown: false,
