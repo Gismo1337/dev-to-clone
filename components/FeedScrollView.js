@@ -4,7 +4,7 @@ import FeedFilter from './FeedFilter';
 import Card from './Card';
 
 // HARDCODED DATAARRAY
-const DATA = [
+let DATA = [
     {
         id: 1,
         imagePath: 'https://images.unsplash.com/photo-1649325401644-41cd4627fa45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
@@ -62,8 +62,12 @@ const DATA = [
 
 export default function FeedScrollView({ feedData }, { navigation }) {
 
-    console.log(feedData)
 
+
+    feedData.map(item => {
+        DATA.push(item)
+    })
+    // DATA.push({ test })
 
     const renderItem = ({ item }) => (
         < Card data={item} navigation={navigation} />

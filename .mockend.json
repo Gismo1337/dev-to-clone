@@ -23,8 +23,8 @@
         },
         "text": {
             "loremSentences": {
-                "minLength": 100,
-                "maxLength": 200
+                "minLength": 10,
+                "maxLength": 100
             }
         },
         "comments": {
