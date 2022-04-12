@@ -1,12 +1,30 @@
 {
     "Post": {
         "title": {
-            "string": {}
+            "loremWords": {
+                "minLength": 5,
+                "maxLength": 20
+            }
         },
         "likes": {
             "int": {
                 "min": 0,
                 "max": 100
+            }
+        },
+        "readTime": {
+            "int": {
+                "min": 0,
+                "max": 100
+            }
+        },
+        "author": {
+            "regexp": "[A-Z][a-z]{5,10}"
+        },
+        "text": {
+            "loremSentences": {
+                "minLength": 100,
+                "maxLength": 200
             }
         },
         "comments": {
