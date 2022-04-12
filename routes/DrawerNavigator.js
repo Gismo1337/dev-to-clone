@@ -9,8 +9,7 @@ import UserProfileScreen from '../screens/UserProfileScreen';
 
 const Drawer = createDrawerNavigator();
 
-export default function DrawerNavigator({ navigation }) {
-
+export default function DrawerNavigator() {
 
     return (
         <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>

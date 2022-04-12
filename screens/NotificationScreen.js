@@ -24,6 +24,7 @@ export default function NotificationScreen({ navigation }) {
                 <Text style={styles.text}>Posts</Text>
 
             </View>
+            {/* TODO: HARDCODED */}
             <NotificationCard />
             <NotificationCard />
             <NotificationCard />

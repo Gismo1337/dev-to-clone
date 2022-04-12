@@ -6,17 +6,14 @@ import PostFooter from '../components/PostFooter';
 
 export default function Card(props) {
 
-
-    // HARDCODED TAGS NEED TO BE ARRAY TO ITERATE THROUGH
+    // TODO: HARDCODED TAGS NEED TO BE ARRAY TO ITERATE THROUGH
     const { imagePath, author, date, title, tag1, tag2, tag3, likes, comments, readTime } = props.data;
-    // const { navigation } = props.navigation
 
     function onPressCard() {
         props.navigation.navigate('CardDetailScreen', props.data)
     }
 
     return (
-
         <TouchableWithoutFeedback onPress={onPressCard}>
             <View style={styles.container}>
                 {imagePath !== '' && <View>
@@ -31,15 +28,12 @@ export default function Card(props) {
                 <View style={styles.postDetailContainer}>
                     <View style={styles.postDetailTop}>
 
-
                         <Avatar />
-
 
                         <View style={styles.postDetailInfo}>
                             <Text style={styles.postAuthor}>{author}</Text>
                             <Text style={styles.postDate}>{date} (1 day ago)</Text>
                         </View>
-
                     </View>
 
                     <View>
@@ -170,5 +164,3 @@ const styles = StyleSheet.create({
 
     },
 });
-
-//         // 363636
