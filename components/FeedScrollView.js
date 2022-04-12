@@ -65,7 +65,14 @@ export default function FeedScrollView({ feedData }, { navigation }) {
 
 
     feedData.map(item => {
-        DATA.push(item)
+        console.log(item)
+        DATA.push({
+            ...item,
+            date: 'Nov 22',
+            imagePath: 'https://images.unsplash.com/photo-1649194270591-8eead57b94c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80',
+            tag1: '#Angular',
+            tag2: '#IDE',
+        })
     })
     // DATA.push({ test })
 

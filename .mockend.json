@@ -28,7 +28,10 @@
             }
         },
         "comments": {
-            "hasMany": "Comment"
+            "int": {
+                "min": 0,
+                "max": 100
+            }
         }
     },
     "Comment": {
