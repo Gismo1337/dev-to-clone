@@ -56,7 +56,7 @@ let DATA = [
         likes: 0,
         comments: 0,
         readTime: 17,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi?',
+        text: 'Lorem ipsum dolors sit amet consectetur adipisicing elit. Quos quas assumenda optio ullam aliquam impedit, quam repudiandae eos eaque quasi?',
     },
 ];
 

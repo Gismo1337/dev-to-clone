@@ -9,14 +9,12 @@ export default function App() {
   const [feedData, setFeedData] = useState({});
 
   _getFeedData = async () => {
-    try {
-      const response = await fetch('https://mockend.com/gismo1337/dev-to-clone/posts/20')
-        .then(response => response.json())
-      setFeedData(response)
-      setLoading(false)
-    } catch (error) {
-      console.log('Error on fetching data: ', error)
-    }
+
+    const response = await fetch('https://mockend.com/gismo1337/dev-to-clone/posts?published_eq=true&views_lt=10')
+      .then(response => response.json())
+    setFeedData(response)
+    setLoading(false);
+
 
 
   };
