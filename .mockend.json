@@ -4,7 +4,10 @@
             "string": {}
         },
         "likes": {
-            "int": {}
+            "int": {
+                "min": 0,
+                "max": 100
+            }
         },
         "comments": {
             "hasMany": "Comment"
