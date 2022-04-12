@@ -3,6 +3,9 @@
         "title": {
             "string": {}
         },
+        "likes": {
+            "number": {}
+        },
         "comments": {
             "hasMany": "Comment"
         }
