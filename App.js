@@ -10,7 +10,7 @@ export default function App() {
 
   _getFeedData = async () => {
 
-    const response = await fetch('https://mockend.com/gismo1337/dev-to-clone/posts?published_eq=true&views_lt=10')
+    const response = await fetch('https://mockend.com/gismo1337/dev-to-clone/posts?limit=5')
       .then(response => response.json())
     setFeedData(response)
     setLoading(false);
