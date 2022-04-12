@@ -3,15 +3,19 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './routes/DrawerNavigator';
+import Navigator from './routes/StackNavigator';
+
 
 export default function App() {
+
   const [loading, setLoading] = useState(true);
   const [feedData, setFeedData] = useState({});
 
   _getFeedData = async () => {
 
-    const response = await fetch('https://mockend.com/gismo1337/dev-to-clone/posts?limit=5')
+    const response = await fetch('https://mockend.com/gismo1337/dev-to-clone/posts?limit=1')
       .then(response => response.json())
+
     setFeedData(response)
     setLoading(false);
 
@@ -35,12 +39,12 @@ export default function App() {
 
   else {
     return (
-      <NavigationContainer>
+      <NavigationContainer >
         <StatusBar
           animated={true}
           backgroundColor="#000"
         />
-        <DrawerNavigator feedData={feedData} />
+        <Navigator feedData={feedData} />
       </NavigationContainer>
 
     );

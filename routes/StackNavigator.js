@@ -9,7 +9,16 @@ import UserProfileScreen from '../screens/UserProfileScreen';
 
 const Stack = createNativeStackNavigator()
 
-export default function Navigator({ navigation }) {
+
+
+
+export default function Navigator(feedData) {
+    // feedData IST HIER ANGEKOMMEN
+    // console.log(feedData)
+
+
+    const HomeScreenCarry = () => <HomeScreen {...feedData} />
+
     return (
         <Stack.Navigator
             // initialRouteName='HomeScreen'
@@ -24,7 +33,7 @@ export default function Navigator({ navigation }) {
             />
             <Stack.Screen
                 name='HomeScreen'
-                component={HomeScreen}
+                component={props => <HomeScreenCarry {...props} />}
                 options={{
                     headerShown: false,
                 }
