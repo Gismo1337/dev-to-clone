@@ -9,7 +9,7 @@ import UserProfileScreen from '../screens/UserProfileScreen';
 
 const Drawer = createDrawerNavigator();
 
-export default function DrawerNavigator() {
+export default function DrawerNavigator({ navigation }) {
 
 
     return (

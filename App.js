@@ -1,50 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import Navigator from './routes/Navigator';
 import DrawerNavigator from './routes/DrawerNavigator';
-import Navigator from './routes/StackNavigator';
-
 
 export default function App() {
-
-  const [loading, setLoading] = useState(true);
-  const [feedData, setFeedData] = useState({});
-
-  _getFeedData = async () => {
-
-    const response = await fetch('https://mockend.com/gismo1337/dev-to-clone/posts?limit=1')
-      .then(response => response.json())
-
-    setFeedData(response)
-    setLoading(false);
-
-
-
-  };
-
+  const [loading, setLoading] = React.useState(true);
 
   // Hardcoded Apploadungtime
   useEffect(() => {
-    _getFeedData()
+    setTimeout(() => {
+      setLoading(false)
+    }, 50);
   }, [])
 
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <FontAwesome5 name="dev" size={96} color="#fff" />
+        <FontAwesome5 name="dev" size={96} color="white" />
       </View>
     )
   }
 
   else {
     return (
-      <NavigationContainer >
+      <NavigationContainer>
         <StatusBar
           animated={true}
           backgroundColor="#000"
         />
-        <Navigator feedData={feedData} />
+
+        <Navigator />
       </NavigationContainer>
 
     );
