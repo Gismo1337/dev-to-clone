@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, setDoc, collection, getDocs } from 'firebase/firestore';
 
+
 // Initialize Firebase from .env file
 const firebaseConfig = {
     apiKey: process.env.API_KEY,
@@ -41,4 +42,4 @@ const __handleGetAllQualifications = async (myCollection) => {
 
 
 
-export default { app, __handleGetAllQualifications };
+export default __handleGetAllQualifications 

@@ -3,10 +3,24 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './routes/DrawerNavigator';
-import app from './services/database';
+import __handleGetAllQualifications from './services/database';
+import { LogBox } from 'react-native';
+
+// See https://github.com/facebook/react-native/issues/12981 for more info
+LogBox.ignoreLogs(['Setting a timer for a long period of time']);
 
 export default function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  async function getPosts() {
+
+
+    const test = await __handleGetAllQualifications('posts')
+    console.log(test)
+    setLoading(false)
+
+  }
+
 
   // Hardcoded Apploadungtime
   useEffect(() => {
@@ -17,7 +31,7 @@ export default function App() {
 
   if (loading) {
 
-
+    getPosts()
 
 
 
