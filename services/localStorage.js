@@ -5,10 +5,9 @@ const storeData = async (value) => {
         const jsonValue = JSON.stringify(value)
         await AsyncStorage.setItem('posts', jsonValue)
     } catch (e) {
-        // saving error
+        console.error(e)
     }
 }
-
 
 const getData = async () => {
     try {
@@ -19,12 +18,11 @@ const getData = async () => {
     }
 }
 
-
 const clearAll = async () => {
     try {
         await AsyncStorage.clear()
     } catch (e) {
-        // clear error
+        console.error(e)
     }
 
     console.log('Done.')

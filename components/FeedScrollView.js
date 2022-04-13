@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import FeedFilter from './FeedFilter';
 import Card from './Card';

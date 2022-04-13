@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, setDoc, collection, getDocs } from 'firebase/firestore';
-
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 // Initialize Firebase from .env file
 const firebaseConfig = {
@@ -39,7 +38,5 @@ const __handleGetAllQualifications = async (myCollection) => {
     });
     return data
 }
-
-
 
 export default __handleGetAllQualifications 
