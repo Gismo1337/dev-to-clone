@@ -4,8 +4,11 @@ import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './routes/DrawerNavigator';
 import __handleGetAllQualifications from './services/database';
-import { LogBox } from 'react-native';
+import { storeData } from './services/localStorage';
 
+
+
+import { LogBox } from 'react-native';
 // See https://github.com/facebook/react-native/issues/12981 for more info
 LogBox.ignoreLogs(['Setting a timer for a long period of time']);
 
@@ -13,29 +16,17 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   async function getPosts() {
-
-
-    const test = await __handleGetAllQualifications('posts')
-    console.log(test)
+    const postsDataFromFirebase = await __handleGetAllQualifications('posts')
+    // Store data in local storage
+    await storeData(postsDataFromFirebase)
     setLoading(false)
-
   }
 
-
-  // Hardcoded Apploadungtime
-  useEffect(() => {
-
-    // setLoading(false)
-
-  }, [])
-
   if (loading) {
-
+    // Load Posts from Firebase Database
     getPosts()
 
-
-
-
+    // Show ICON while downloading Data
     return (
       <View style={styles.loadingContainer}>
         <FontAwesome5 name="dev" size={96} color="white" />
