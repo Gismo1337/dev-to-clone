@@ -3,18 +3,25 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar, StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './routes/DrawerNavigator';
+import app from './services/database';
 
 export default function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // Hardcoded Apploadungtime
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false)
-    }, 50);
+
+    // setLoading(false)
+
   }, [])
 
   if (loading) {
+
+
+
+
+
+
     return (
       <View style={styles.loadingContainer}>
         <FontAwesome5 name="dev" size={96} color="white" />

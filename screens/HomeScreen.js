@@ -18,5 +18,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
         width: '100%',
         height: '100%'
+    },
+    test: {
+        color: '#fff',
     }
+
 });
