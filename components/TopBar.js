@@ -53,6 +53,7 @@ export default function TopBar({ navigation }) {
 
                         setModalVisible(!modalVisible);
                     }}>
+
                     <UserModal toggleFunction={setModalVisible} navigation={navigation} />
 
                 </Modal>
@@ -69,6 +70,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#161616',
         justifyContent: 'center',
     },
+    test: { color: 'white' },
+    testContainer: { width: '100%', height: '100%', backgroundColor: 'rgba(0,0,0,0.5)' },
     logo: {
         height: 40,
         width: 50,
