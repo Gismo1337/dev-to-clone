@@ -82,7 +82,7 @@ tag3: '#Composer' [string]
 text:'Lorem ipsum dolor sit amet consectetur adipisicing elit.' [string]
 title:'Top 10 React Native' [string]
 ``` 
-Feel free to add more dummy data with this pattern.
+Feel free to add more dummy documents with this pattern.
 
 ### 4) Start the Expo Server
 1. Open the project path in terminal.
