@@ -63,6 +63,27 @@ MESSAGING_920493813599
 APP_ID=1:920493813599:web:a35040e0933196768390ea
 ``` 
 
+### 4) Dummydata
+
+1. Open https://console.firebase.google.com/ and open 'Firestore Database'
+2. Create collection named 'posts'
+3. Create document with random ID and follwing fields:
+``` 
+author: 'John Doe' [string]
+comments: 13 [number]
+date: 'Nov 22' [string]
+id: 1 [number]
+imagePath: '***PATH_TO_IMAGE_HERE***' [string]
+likes: 41 [number]
+readTime: 7 [number]
+tag1: '#JavaScript' [string]
+tag2: '#ReactNative' [string]
+tag3: '#Composer' [string]
+text:'Lorem ipsum dolor sit amet consectetur adipisicing elit.' [string]
+title:'Top 10 React Native' [string]
+``` 
+Feel free to add more dummy data with this pattern.
+
 ### 4) Start the Expo Server
 1. Open the project path in terminal.
 2. (Re)Start server with clean cache by running `expo start -c`
