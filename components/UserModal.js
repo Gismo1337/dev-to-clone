@@ -21,12 +21,24 @@ export default function UserModal(props) {
                         </Pressable>
 
                         <View style={styles.divider} />
+                        <Pressable onPress={() => navigation.navigate('DashboardScreen')} >
+                            <Text style={styles.modalText}>Dashboard</Text>
+                        </Pressable>
 
-                        <Text style={styles.modalText}>Dashboard</Text>
-                        <Text style={styles.modalText}>Create Post</Text>
-                        <Text style={styles.modalText}>Reading list</Text>
-                        <Text style={styles.modalText}>Settings</Text>
+                        <Pressable onPress={() => navigation.navigate('CreatePostScreen')} >
+                            <Text style={styles.modalText}>Create Post</Text>
+                        </Pressable>
+                        <Pressable onPress={() => navigation.navigate('ReadingListScreen')} >
+                            <Text style={styles.modalText}>Reading list</Text>
+                        </Pressable>
+
+                        <Pressable onPress={() => navigation.navigate('SettingsScreen')} >
+                            <Text style={styles.modalText}>Settings</Text>
+                        </Pressable>
+
                         <View style={styles.divider} />
+
+
                         <Text style={styles.modalText}>Sign Out</Text>
                         {/* FIXME: For Development only */}
                         {/* <Pressable

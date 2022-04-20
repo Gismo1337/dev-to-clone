@@ -6,6 +6,10 @@ import NotificationScreen from '../screens/NotificationScreen';
 import CardDetailScreen from '../screens/CardDetailScreen';
 import DrawerContent from '../screens/DrawerContent';
 import UserProfileScreen from '../screens/UserProfileScreen';
+import CreatePostScreen from '../screens/CreatePostScreen';
+import DashboardScreen from '../screens/DashboardScreen';
+import ReadingListScreen from '../screens/ReadingListScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -61,6 +65,42 @@ export default function DrawerNavigator() {
             <Drawer.Screen
                 name='UserProfileScreen'
                 component={UserProfileScreen}
+                options={
+                    {
+                        headerShown: false,
+                    }
+                }
+            />
+            <Drawer.Screen
+                name='DashboardScreen'
+                component={DashboardScreen}
+                options={
+                    {
+                        headerShown: false,
+                    }
+                }
+            />
+            <Drawer.Screen
+                name='CreatePostScreen'
+                component={CreatePostScreen}
+                options={
+                    {
+                        headerShown: false,
+                    }
+                }
+            />
+            <Drawer.Screen
+                name='ReadingListScreen'
+                component={ReadingListScreen}
+                options={
+                    {
+                        headerShown: false,
+                    }
+                }
+            />
+            <Drawer.Screen
+                name='SettingsScreen'
+                component={SettingsScreen}
                 options={
                     {
                         headerShown: false,
